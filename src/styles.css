@@ -611,3 +611,183 @@ button:disabled { opacity: .48; cursor: not-allowed; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* Improve contrast for text that was too faint on small screens. */
+[data-theme='light'] .page-heading p,
+[data-theme='light'] .panel-heading p,
+[data-theme='light'] .goal-summary-card span,
+[data-theme='light'] .summary-note,
+[data-theme='light'] .goal-description,
+[data-theme='light'] .transaction-description span,
+[data-theme='light'] .goal-preview-name span,
+[data-theme='light'] .goal-preview-values,
+[data-theme='light'] .goal-card-meta > span:first-child,
+[data-theme='light'] .goal-estimate,
+[data-theme='light'] .form-hint,
+[data-theme='light'] .field,
+[data-theme='light'] .empty-state p,
+[data-theme='light'] .settings-section-head p,
+[data-theme='light'] .choice-leading span,
+[data-theme='light'] .category-card-text span,
+[data-theme='light'] .calendar-legend,
+[data-theme='light'] .day-activity-main span,
+[data-theme='light'] .month-overview-row span,
+[data-theme='light'] .calendar-net {
+  color: #647286;
+}
+
+[data-theme='dark'] .modal,
+[data-theme='dark'] .summary-card,
+[data-theme='dark'] .goal-card,
+[data-theme='dark'] .goal-summary-card,
+[data-theme='dark'] .category-card,
+[data-theme='dark'] .history-panel,
+[data-theme='dark'] .transactions-page-panel {
+  background: var(--surface);
+  border-color: #35435a;
+}
+[data-theme='dark'] .modal-heading h2,
+[data-theme='dark'] .goal-summary-card strong,
+[data-theme='dark'] .goal-money-line strong,
+[data-theme='dark'] .goal-estimate strong,
+[data-theme='dark'] .goal-progress-line,
+[data-theme='dark'] .goal-card-meta > span:first-child,
+[data-theme='dark'] .goal-description,
+[data-theme='dark'] .goal-summary-card span,
+[data-theme='dark'] .summary-label,
+[data-theme='dark'] .summary-note,
+[data-theme='dark'] .eyebrow,
+[data-theme='dark'] .footer,
+[data-theme='dark'] .breadcrumb,
+[data-theme='dark'] .profile-text span,
+[data-theme='dark'] .notification-count,
+[data-theme='dark'] .notification-item small,
+[data-theme='dark'] .notification-empty,
+[data-theme='dark'] .month-stats div span,
+[data-theme='dark'] .cashflow-progress small,
+[data-theme='dark'] .empty-state,
+[data-theme='dark'] .empty-state p,
+[data-theme='dark'] .field,
+[data-theme='dark'] .form-hint,
+[data-theme='dark'] .allocation-info,
+[data-theme='dark'] .transaction-description span,
+[data-theme='dark'] .goal-preview-name span,
+[data-theme='dark'] .goal-preview-values,
+[data-theme='dark'] .goal-estimate,
+[data-theme='dark'] .calendar-legend,
+[data-theme='dark'] .day-activity-main span,
+[data-theme='dark'] .month-overview-row span,
+[data-theme='dark'] .calendar-net,
+[data-theme='dark'] .settings-note,
+[data-theme='dark'] .profile-picture-row span,
+[data-theme='dark'] .balance-history-row span,
+[data-theme='dark'] .category-footnote {
+  color: #b6c3d3;
+}
+[data-theme='dark'] .field input::placeholder,
+[data-theme='dark'] .field textarea::placeholder,
+[data-theme='dark'] .filter-search input::placeholder {
+  color: #9eacbd;
+}
+[data-theme='dark'] .field input[readonly] {
+  color: #dce5ef;
+  background: #202e43;
+}
+[data-theme='dark'] .button-primary {
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .page-heading p,
+  .panel-heading p,
+  .summary-label,
+  .summary-note,
+  .cashflow-line span,
+  .cashflow-progress small,
+  .month-stats div span,
+  .panel-footer-link,
+  .text-link,
+  .transaction-description span,
+  .goal-summary-card span,
+  .goal-category,
+  .goal-description,
+  .goal-progress-line,
+  .goal-money-line span,
+  .goal-card-meta > span:first-child,
+  .goal-estimate,
+  .goal-card-buttons .button,
+  .field,
+  .field input,
+  .field select,
+  .field textarea,
+  .form-hint,
+  .allocation-info,
+  .inline-note,
+  .transactions-table th,
+  .transactions-table td,
+  .table-transaction span,
+  .table-transaction strong,
+  .filters-row,
+  .category-card-text span,
+  .settings-section-head p,
+  .choice-leading span,
+  .settings-note,
+  .calendar-legend,
+  .calendar-weekdays span,
+  .day-activity-main span,
+  .month-overview-row span,
+  .calendar-net,
+  .footer {
+    font-size: 12px !important;
+  }
+
+  .summary-note,
+  .goal-description,
+  .form-hint,
+  .inline-note {
+    line-height: 1.55;
+  }
+
+  .button,
+  .goal-card-buttons .button {
+    min-height: 42px;
+    font-size: 12px !important;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    min-height: 44px;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    font-size: 16px !important;
+  }
+
+  .goal-summary-card {
+    min-height: 82px;
+  }
+
+  .goal-summary-card strong,
+  .goal-money-line strong,
+  .goal-progress-line strong,
+  .goal-preview-name strong,
+  .goal-preview-values,
+  .goal-percentage,
+  .transaction-description strong,
+  .transaction-amount {
+    font-size: 13px !important;
+  }
+
+  .status-pill,
+  .category-chip,
+  .type-label {
+    font-size: 11px !important;
+  }
+
+  .calendar-day {
+    font-size: 13px;
+  }
+}
