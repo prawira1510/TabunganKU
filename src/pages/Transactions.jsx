@@ -1,5 +1,6 @@
 import React, { useMemo, useRef, useState } from 'react';
 import { ArrowDownLeft, ArrowUpRight, CalendarDays, Edit2, Eye, FileText, Plus, Search, Trash2, Wallet } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Modal from '../components/Modal.jsx';
 import { formatCurrency, formatDate, today } from '../utils/finance.js';
 
@@ -67,7 +68,7 @@ export default function Transactions({ data, addTransaction, updateTransaction, 
           {!rows.length && <div className="empty-state table-empty"><div className="empty-icon"><FileText size={23} /></div><strong>{data.transactions.length ? 'Transaksi tidak ditemukan' : 'Belum ada transaksi'}</strong><p>{data.transactions.length ? 'Coba ubah filter atau kata kunci pencarian.' : 'Transaksi yang kamu catat akan muncul di sini.'}</p>{!data.transactions.length && <button className="button button-primary" onClick={() => openForm()}><Plus size={16} /> Catat transaksi</button>}</div>}
         </div>
       </section>
-      <div className="inline-note"><Wallet size={16} /> Saldo dan laporan akan diperbarui otomatis setelah transaksi disimpan.</div>
+      <div className="inline-note"><Wallet size={16} /> Saldo dan laporan akan diperbarui otomatis setelah transaksi disimpan.{!categories.length && <> Belum ada kategori. <Link to="/categories">Buat kategori</Link> terlebih dahulu.</>}</div>
       {modal && <Modal title={editing ? 'Edit transaksi' : `Catat ${form.type === 'income' ? 'pemasukan' : 'pengeluaran'}`} onClose={() => setModal(false)}>
         <form className="form-grid" onSubmit={submit}>
           {!forcedType && <label className="field full-field">Jenis transaksi<select value={form.type} onChange={(e) => setForm({ ...form, type: e.target.value, category: '' })}><option value="income">Pemasukan</option><option value="expense">Pengeluaran</option></select></label>}
